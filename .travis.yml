@@ -6,3 +6,9 @@ install:
 script:
   - xbuild /p:Configuration=Release TravisSample.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./TravisSample.Test/bin/Release/TravisSample.Test.dll
+  notification:
+    email:
+        recipients:
+        - viet.hung.tran.ngo@gmail.com
+        on_success: never # default: change
+        on_failure: always # default: always
